@@ -6,33 +6,34 @@ version = '0.1'
 setup(name='collective.publications',
       version=version,
       description="Publication content type, based on Dexterity",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open("README.rst").read() + "\n" +
+                       open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
         ],
-      keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      keywords='plone content publications dexterity',
+      author='Emmanuelle HELLY',
+      author_email='emmanuelle.helly@makina-corpus.net',
+      url='https://github.com/numahell/collective.publications/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['collective'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools',
-          'plone.app.dexterity',
-          'plone.namedfile [blobs]',
+            'setuptools',
+            'plone.app.dexterity',
+            'plone.namedfile [blobs]',
             'collective.dexteritytextindexer',
             'collective.z3cform.widgets',
             'collective.z3cform.datetimewidget',
             'plone.app.referenceablebehavior',
-          # -*- Extra requirements: -*-
+            # -*- Extra requirements: -*-
       ],
       entry_points="""
       # -*- Entry points: -*-
