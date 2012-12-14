@@ -1,12 +1,17 @@
 Introduction
 ============
 
-This product allow to create electronic publication content types, with several file format.
+This product allows to create digital publications, and displays several numeric file format for a publication.
 
 Dependencies
 ============
 
 * plone.app.dexterity
+
+Other products
+==============
+
+* `slc.publications`_ gives more features as the cover generated with the pdf file, but does not allow the ability to upload several file fomat.
 
 Credits
 =======
@@ -27,3 +32,4 @@ People
 
 .. |makinacom| image:: http://depot.makina-corpus.org/public/logo.gif
 .. _makinacom:  http://www.makina-corpus.com
+.. _`slc.publications`: http://plone.org/products/slc.publications
