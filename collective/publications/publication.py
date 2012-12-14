@@ -27,10 +27,9 @@ class IPublication(form.Schema):
             description=_(u"Publication issue."),
             required=False,
         )
-    
-    dc_sizeOrDuration = schema.TextLine(
-        title=_(u"Size or duration"),
-        description=_(u"Publication size, for example the number of pages."),
+
+    number_of_pages = schema.TextLine(
+        title=_(u"Number of pages"),
         required=False,
         )
         
@@ -39,9 +38,9 @@ class IPublication(form.Schema):
             required=False,
         )
 
-    dc_collection = schema.Choice(
-            title=_(u"Collection"),
-            description=_(u"Publication collection."),
+    type_in_collection = schema.Choice(
+            title=_(u"Type in collection"),
+            description=_(u"Publication type in the collection."),
             vocabulary=foncsi_collection,
             required=False,
         )

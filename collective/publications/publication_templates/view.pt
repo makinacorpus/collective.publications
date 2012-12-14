@@ -4,22 +4,46 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="plonetheme.makinacorpuscom">
+      i18n:domain="collective.publications">
 <body>
 
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
+    <div class="align-right" 
+            tal:define="cover nocall:context/cover"
+            tal:condition="nocall:cover">
+        <img tal:attributes="src string:${context/absolute_url}/@@download/cover/${cover/filename};
+                             height cover/_height | string:160px;
+                             width cover/_width | string:auto;"
+            />
+        </div>
 
-    <p tal:content="structure context/dcterm_abstract/output" />
-    
-    <p tal:content="context/dcterm_issue" />
-    
-    <p tal:content="context/dc_sizeOrDuration" />
+    <dl>
+        <dt i18n:translate="">Author</dt>
+        <dd tal:content="context/author/id" />
         
-    <p tal:content="context/dc_collection" />
+        <tal:block condition="context/dcterm_issue">
+        <dt i18n:translate="">Issue</dt>
+        <dd tal:content="context/dcterm_issue" />
+        </tal:block>
+        
+        <tal:block condition="context/number_of_pages">
+        <dt i18n:translate="">Number of pages</dt>
+        <dd> <span tal:content="context/number_of_pages" /> pages</dd>
+        </tal:block>
+        
+        <tal:block condition="context/type_in_collection">
+        <dt i18n:translate="">Type in collection</dt>
+        <dd tal:content="context/type_in_collection/title" />
+        </tal:block>
+    </dl>
     
-    <p tal:content="structure context/cover" />
+    <section id="abstract">
+        <h2 i18n:translate="">Abstract</h2>
+        <div tal:content="structure context/dcterm_abstract/output" />
+    </section>
+    
     
   </metal:content-core>
 </metal:main>
