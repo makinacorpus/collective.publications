@@ -28,6 +28,10 @@ setup(name='collective.publications',
           'setuptools',
           'plone.app.dexterity',
           'plone.namedfile [blobs]',
+            'collective.dexteritytextindexer',
+            'collective.z3cform.widgets',
+            'collective.z3cform.datetimewidget',
+            'plone.app.referenceablebehavior',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
