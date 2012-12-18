@@ -30,6 +30,12 @@ People
 
 - Emmanuelle HELLY <emmanuelle.helly@makina-corpus.com>
 
+Resources
+---------
+
+* Icon comes from `the Noun Project`_ and is in Public Domain
+
 .. |makinacom| image:: http://depot.makina-corpus.org/public/logo.gif
 .. _makinacom:  http://www.makina-corpus.com
 .. _`slc.publications`: http://plone.org/products/slc.publications
+.. _`the Noun Project`: http://thenounproject.com/noun/document/#icon-No4502
