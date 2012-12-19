@@ -4,7 +4,7 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 from plone.directives import dexterity, form
 from plone.app.textfield import RichText
-from plone.namedfile.field import NamedBlobImage, NamedBlobFile
+from plone.namedfile.field import NamedBlobImage
 from Products.ATContentTypes.interfaces.file import IATFile
 
 from Acquisition import aq_inner

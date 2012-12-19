@@ -4,7 +4,7 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="collective.publications">
       
 <head>
     <metal:block fill-slot="style_slot">
@@ -55,9 +55,14 @@
     </section>
     
     <section id="available_format">
-    <ul tal:repeat="file context/view/getFiles">
-        <li tal:content="file/id"></li>
-    </ul>
+        <h2 i18n:translate="">Available formats</h2>
+        <ul tal:repeat="item context/view/getFiles">
+            <li tal:define="item_icon python:plone_view.getIcon(item);
+                            item_url item/getURL|item/absolute_url;">
+                <img tal:replace="structure item_icon/html_tag" />
+                <a tal:content="item/Title" tal:attributes="href item_url"></a>
+            </li>
+        </ul>
     </section>
     
     
