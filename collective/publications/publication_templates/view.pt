@@ -4,7 +4,17 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="collective.publications">
+      i18n:domain="plone">
+      
+<head>
+    <metal:block fill-slot="style_slot">
+        <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++collective.publications/theme.css"
+            />
+    </metal:block>
+</head>
+
 <body>
 
 <metal:main fill-slot="content-core">
@@ -19,22 +29,22 @@
             />
         </div>
 
-    <dl>
-        <dt i18n:translate="">Author</dt>
-        <dd tal:content="context/author/id" />
+    <dl class="publicationDetails">
+        <dt id="" i18n:translate="">Creator</dt>
+        <dd tal:content="context/Creator" />
         
         <tal:block condition="context/dcterm_issue">
-        <dt i18n:translate="">Issue</dt>
+        <dt id="" i18n:translate="">Issue</dt>
         <dd tal:content="context/dcterm_issue" />
         </tal:block>
         
         <tal:block condition="context/number_of_pages">
-        <dt i18n:translate="">Number of pages</dt>
+        <dt id="" i18n:translate="">Number of pages</dt>
         <dd> <span tal:content="context/number_of_pages" /> pages</dd>
         </tal:block>
         
         <tal:block condition="context/type_in_collection">
-        <dt i18n:translate="">Type in collection</dt>
+        <dt id="" i18n:translate="">Type in collection</dt>
         <dd tal:content="context/type_in_collection/title" />
         </tal:block>
     </dl>
@@ -42,6 +52,12 @@
     <section id="abstract">
         <h2 i18n:translate="">Abstract</h2>
         <div tal:content="structure context/dcterm_abstract/output" />
+    </section>
+    
+    <section id="available_format">
+    <ul tal:repeat="file context/view/getFiles">
+        <li tal:content="file/id"></li>
+    </ul>
     </section>
     
     

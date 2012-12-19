@@ -2,9 +2,13 @@ from five import grok
 from zope import schema
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
-from plone.directives import form
+from plone.directives import dexterity, form
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
+from Products.ATContentTypes.interfaces.file import IATFile
+
+from Acquisition import aq_inner
+from Products.CMFCore.utils import getToolByName
 
 from collective.publications import MessageFactory as _
 
@@ -50,9 +54,25 @@ class IPublication(form.Schema):
             required=False,
             title=_(u"Cover"),
     )
+    
+    
+class Publication(dexterity.Container):
+    grok.implements(IPublication)
+    
 
+    
 class View(grok.View):
     grok.context(IPublication)
     grok.require('zope2.View')
 
     grok.name('view')
+    
+    def getFiles(self):
+        """Return the files contained in the publication."""
+        
+        context = aq_inner(self.context)
+        catalog = getToolByName(context, 'portal_catalog')
+
+        return catalog(object_provides=IATFile.__identifier__,
+                       path='/'.join(context.getPhysicalPath()),
+                       sort_on='sortable_title')
