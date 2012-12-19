@@ -1,0 +1,12 @@
+/* Stylesheet for collective.publications */
+
+
+/* Publication view */
+
+.align-right {
+    float: right;
+}
+
+.portaltype-publication #abstract {
+    clear: both;
+}

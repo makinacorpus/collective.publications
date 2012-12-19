@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="100px"
+   height="100px"
+   viewBox="0 0 100 100"
+   enable-background="new 0 0 100 100"
+   xml:space="preserve"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="publication_icon.svg"
+   inkscape:export-filename="/home/ehe/Dev/minitage/zope/foncsi/src.mrdeveloper/collective.publications/collective/publications/static/publication_icon.png"
+   inkscape:export-xdpi="28.799999"
+   inkscape:export-ydpi="28.799999"><metadata
+   id="metadata29"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs27" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="640"
+   inkscape:window-height="480"
+   id="namedview25"
+   showgrid="false"
+   inkscape:zoom="2.36"
+   inkscape:cx="50"
+   inkscape:cy="50"
+   inkscape:window-x="65"
+   inkscape:window-y="24"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="Layer_1" />
+<path
+   fill="#000000"
+   d="M38.482,1L10,29.441V99h80V1H38.482z M38,10.67V29H19.468L38,10.67z M83,92H17V36h28V8h38V92z"
+   id="path3" />
+<g
+   id="g5">
+	<rect
+   x="27"
+   y="61"
+   fill="#000000"
+   width="46"
+   height="7"
+   id="rect7" />
+</g>
+<g
+   id="g9">
+	<rect
+   x="27"
+   y="75"
+   fill="#000000"
+   width="46"
+   height="7"
+   id="rect11" />
+</g>
+<g
+   id="g13">
+	<rect
+   x="55"
+   y="29"
+   fill="#000000"
+   width="18"
+   height="7"
+   id="rect15" />
+</g>
+<g
+   id="g17">
+	<rect
+   x="55"
+   y="15"
+   fill="#000000"
+   width="18"
+   height="7"
+   id="rect19" />
+</g>
+<g
+   id="g21">
+	<rect
+   x="27"
+   y="47"
+   fill="#000000"
+   width="46"
+   height="7"
+   id="rect23" />
+</g>
+</svg>

@@ -4,7 +4,7 @@
  <property name="title" i18n:translate="">Publication</property>
  <property name="description"
     i18n:translate="">Publication type content.</property>
- <property name="icon_expr">string:++resource++collective.publications/images/publication_icon.svg</property>
+ <property name="icon_expr">string:++resource++collective.publications/publication_icon.png</property>
  <property name="factory">publication</property>
  <property
     name="add_view_expr">string:${folder_url}/++add++publication</property>
