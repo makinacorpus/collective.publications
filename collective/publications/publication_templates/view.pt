@@ -30,8 +30,13 @@
         </div>
 
     <dl class="publicationDetails">
-        <dt id="" i18n:translate="">Creator</dt>
-        <dd tal:content="context/Creator" />
+        
+        <dt id="" i18n:translate="">Author(s)</dt>        
+        <tal:block condition="context/creators" repeat="author context/creators">
+            <dd tal:define="mtool python:context.portal_membership;
+                            authorinfo python: mtool.getMemberInfo(author);" 
+                tal:content="authorinfo/fullname|author" />
+        </tal:block>
         
         <tal:block condition="context/dcterm_issue">
         <dt id="" i18n:translate="">Issue</dt>
@@ -51,7 +56,7 @@
     
     <section id="abstract">
         <h2 i18n:translate="">Abstract</h2>
-        <div tal:content="structure context/dcterm_abstract/output" />
+        <div tal:condition="context/dcterm_abstract" tal:content="structure context/dcterm_abstract/output" />
     </section>
     
     <section id="available_format">
