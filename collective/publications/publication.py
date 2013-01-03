@@ -7,6 +7,11 @@ from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
 from Products.ATContentTypes.interfaces.file import IATFile
 
+try:
+    from z3c.form.browser.textlines import TextLinesFieldWidget
+except ImportError:
+    from plone.z3cform.textlines.textlines import TextLinesFieldWidget
+
 from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
 
@@ -20,6 +25,18 @@ foncsi_collection = SimpleVocabulary(
 
 class IPublication(form.Schema):
 
+    creators = schema.Tuple(
+        title = _(u'label_creators', u'Creators'),
+        description = _(u'help_creators',
+                          default=u"Persons responsible for creating the content of "
+                                   "this item. Please enter a list of user names, one "
+                                   "per line. The principal creator should come first."),
+        value_type = schema.TextLine(),
+        required = False,
+        missing_value = (),
+        )
+    form.widget(creators = TextLinesFieldWidget)
+    
     dcterm_abstract = RichText(
             title=_(u"Abstract"),
             description=_(u"A short summary of the content."),
