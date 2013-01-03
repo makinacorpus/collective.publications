@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-12-19 10:58+0000\n"
+"POT-Creation-Date: 2013-01-03 16:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,15 @@ msgid "A short summary of the content."
 msgstr "Un résumé court du contenu."
 
 #: ./publication.py:24
-#: ./publication_templates/view.pt:53
+#: ./publication_templates/view.pt:58
 msgid "Abstract"
 msgstr "Résumé"
 
-#: ./publication_templates/view.pt:58
+#: ./publication_templates/view.pt:34
+msgid "Author(s)"
+msgstr "Auteur(s)"
+
+#: ./publication_templates/view.pt:63
 msgid "Available formats"
 msgstr "Formats disponibles"
 
@@ -39,17 +43,13 @@ msgstr "Couverture"
 msgid "Cover picture."
 msgstr "Image de la 1ère de couverture."
 
-#: ./publication_templates/view.pt:33
-msgid "Creator"
-msgstr "Auteur"
-
 #: ./publication.py:30
-#: ./publication_templates/view.pt:37
+#: ./publication_templates/view.pt:42
 msgid "Issue"
 msgstr "Numéro"
 
 #: ./publication.py:36
-#: ./publication_templates/view.pt:42
+#: ./publication_templates/view.pt:47
 msgid "Number of pages"
 msgstr "Nombre de pages"
 
@@ -62,7 +62,7 @@ msgid "Publication type in the collection."
 msgstr "Type dans la collection de la publication."
 
 #: ./publication.py:46
-#: ./publication_templates/view.pt:47
+#: ./publication_templates/view.pt:52
 msgid "Type in collection"
 msgstr "Type dans la collection"
 
