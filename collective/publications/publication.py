@@ -7,6 +7,9 @@ from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
 from Products.ATContentTypes.interfaces.file import IATFile
 
+from plone.app.dexterity.behaviors.metadata import IDublinCore
+
+from plone.formwidget.autocomplete import AutocompleteFieldWidget
 try:
     from z3c.form.browser.textlines import TextLinesFieldWidget
 except ImportError:
