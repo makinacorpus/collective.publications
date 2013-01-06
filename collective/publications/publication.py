@@ -28,6 +28,12 @@ foncsi_collection = SimpleVocabulary(
 
 class IPublication(form.Schema):
 
+    dcterm_abstract = RichText(
+            title=_(u"Abstract"),
+            description=_(u"A short summary of the content."),
+            required=False,
+        )
+
     creators = schema.Tuple(
         title = _(u'label_creators', u'Creators'),
         description = _(u'help_creators',
@@ -40,12 +46,6 @@ class IPublication(form.Schema):
         )
     form.widget(creators = TextLinesFieldWidget)
     
-    dcterm_abstract = RichText(
-            title=_(u"Abstract"),
-            description=_(u"A short summary of the content."),
-            required=False,
-        )
-
     dcterm_issue = schema.TextLine(
             title=_(u"Issue"),
             description=_(u"Publication issue."),
@@ -78,9 +78,8 @@ class IPublication(form.Schema):
     
 class Publication(dexterity.Container):
     grok.implements(IPublication)
-    
 
-    
+
 class View(grok.View):
     grok.context(IPublication)
     grok.require('zope2.View')
