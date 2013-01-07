@@ -12,9 +12,9 @@
   
     <plone:behavior
         title="Publication"
-        description="Provide fields for any publication content."
+        description="Adds fields for a publication content."
         provides=".publication.IPublication"
-        factory="collective.publications.content.publication.Publication"
+        factory=".publication.Publication"
         for="plone.dexterity.interfaces.IDexterityContent"
         />
 
