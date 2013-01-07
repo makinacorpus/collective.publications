@@ -47,12 +47,12 @@ class IPublication(form.Schema):
             required=False,
         )
 
-    number_of_pages = schema.TextLine(
+    number_of_pages = schema.Int(
         title=_(u"Number of pages"),
         required=False,
         )
         
-    dcterm_bibliographicCitation = schema.Int(
+    dcterm_bibliographicCitation = schema.TextLine(
             title=_(u"Bibliographic citation"),
             required=False,
         )
