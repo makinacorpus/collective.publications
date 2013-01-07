@@ -1,5 +1,6 @@
 from five import grok
 from zope import schema
+from zope.interface import implements, alsoProvides
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 from plone.directives import dexterity, form
@@ -19,12 +20,6 @@ from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
 
 from collective.publications import MessageFactory as _
-
-foncsi_collection = SimpleVocabulary(
-    [SimpleTerm(value=u'dixquestions', title=u'10 questions'),
-     SimpleTerm(value=u'researchreport', title=u'Research report'),
-     SimpleTerm(value=u'thinking', title=u'Thinking'),]
-    )
 
 class IPublication(form.Schema):
 
@@ -62,19 +57,13 @@ class IPublication(form.Schema):
             required=False,
         )
 
-    type_in_collection = schema.Choice(
-            title=_(u"Type in collection"),
-            description=_(u"Publication type in the collection."),
-            vocabulary=foncsi_collection,
-            required=False,
-        )
-
     cover = NamedBlobImage(
             description=_(u"Cover picture."),
             required=False,
             title=_(u"Cover"),
     )
-    
+
+alsoProvides(IPublication, form.IFormFieldProvider)
     
 class Publication(dexterity.Container):
     grok.implements(IPublication)
