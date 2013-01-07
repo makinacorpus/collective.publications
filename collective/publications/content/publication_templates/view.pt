@@ -47,11 +47,6 @@
         <dt id="" i18n:translate="">Number of pages</dt>
         <dd> <span tal:content="context/number_of_pages" /> pages</dd>
         </tal:block>
-        
-        <tal:block condition="context/type_in_collection">
-        <dt id="" i18n:translate="">Type in collection</dt>
-        <dd tal:content="context/type_in_collection/title" />
-        </tal:block>
     </dl>
     
     <section id="abstract">
