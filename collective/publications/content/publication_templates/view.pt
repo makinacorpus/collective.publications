@@ -43,9 +43,9 @@
         <dd tal:content="context/dcterm_issue" />
         </tal:block>
         
-        <tal:block condition="context/number_of_pages">
+        <tal:block condition="context/pages">
         <dt id="" i18n:translate="">Number of pages</dt>
-        <dd> <span tal:content="context/number_of_pages" /> pages</dd>
+        <dd> <span tal:content="context/pages" /> pages</dd>
         </tal:block>
     </dl>
     

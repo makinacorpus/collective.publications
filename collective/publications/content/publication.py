@@ -47,7 +47,7 @@ class IPublication(form.Schema):
             required=False,
         )
 
-    number_of_pages = schema.Int(
+    pages = schema.Int(
         title=_(u"Number of pages"),
         required=False,
         )
