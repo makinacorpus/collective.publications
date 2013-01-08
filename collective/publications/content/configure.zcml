@@ -14,7 +14,6 @@
         title="Publication"
         description="Adds fields for a publication content."
         provides=".publication.IPublication"
-        factory=".publication.Publication"
         for="plone.dexterity.interfaces.IDexterityContent"
         />
 
