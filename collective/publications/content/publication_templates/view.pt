@@ -23,9 +23,10 @@
     <div class="align-right" 
             tal:define="cover nocall:context/cover"
             tal:condition="nocall:cover">
-        <img tal:attributes="src string:${context/absolute_url}/@@download/cover/${cover/filename};
-                             height cover/_height | string:160px;
-                             width cover/_width | string:auto;"
+        <img tal:define="scales context/@@images;
+                         image cover"
+             tal:replace="structure python: scales.scale('cover',
+                          scale='mini').tag()"
             />
         </div>
 
