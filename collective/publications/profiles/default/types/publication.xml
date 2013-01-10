@@ -4,7 +4,7 @@
  <property name="title" i18n:translate="">Publication</property>
  <property name="description"
     i18n:translate="">Publication type content.</property>
- <property name="icon_expr">string:++resource++collective.publications/publication_icon.png</property>
+ <property name="content_icon">++resource++collective.publications/publication_icon.png</property>
  <property name="factory">publication</property>
  <property
     name="add_view_expr">string:${folder_url}/++add++publication</property>
@@ -26,7 +26,7 @@
  
  <!-- add permission -->
  <property name="add_permission">cmf.AddPortalContent</property>
- <property name="klass">plone.dexterity.content.Container</property>
+ <property name="klass">collective.publications.content.publication.Publication</property>
  
  <!-- enabled behaviors -->
  <property name="behaviors">
