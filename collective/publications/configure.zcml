@@ -11,7 +11,7 @@
   <includeDependencies package="." />
 
   <include package=".content" />
-  <include package=".migration" />
+  <include package=".upgrades" />
         
   <i18n:registerTranslations directory="locales" />
 

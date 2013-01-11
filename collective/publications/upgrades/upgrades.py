@@ -13,6 +13,7 @@ except:
 from Products.CMFCore.utils import getToolByName
 from Products.ATContentTypes.interface.image import IATImage
 from Products.ATContentTypes.content.image import ATImage
+from collective.publications import setuphandlers
 from collective.publications.content.publication import IPublication
 from plone.dexterity.interfaces import IDexterityContent
 import transaction
@@ -31,6 +32,10 @@ def upgrade_to_1001(context):
     setup.runImportStepFromProfile('profile-collective.publications:default', 'cssregistry', run_dependencies=False)
     setup.runImportStepFromProfile('profile-collective.publications:default', 'typeinfo', run_dependencies=False)
     transaction.commit()
+
+    site = getToolByName(context, 'portal_url').getPortalObject()
+    setuphandlers.setup_catalog(site)
+    site.portal_catalog.reindexIndex('dcterm_issue', site.REQUEST)
     
     
 
