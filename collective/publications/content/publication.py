@@ -29,18 +29,6 @@ class IPublication(form.Schema):
             description=_(u"A short summary of the content."),
             required=False,
         )
-
-    creators = schema.Tuple(
-        title = _(u'label_creators', u'Creators'),
-        description = _(u'help_creators',
-                          default=u"Persons responsible for creating the content of "
-                                   "this item. Please enter a list of user names, one "
-                                   "per line. The principal creator should come first."),
-        value_type = schema.TextLine(),
-        required = False,
-        missing_value = (),
-        )
-    form.widget(creators = TextLinesFieldWidget)
     
     dcterm_issue = schema.TextLine(
             title=_(u"Issue"),
