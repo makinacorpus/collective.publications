@@ -5,7 +5,7 @@ version = '0.1'
 
 setup(name='collective.publications',
       version=version,
-      description="",
+      description="Provides a publication content type based on dexterity",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from
