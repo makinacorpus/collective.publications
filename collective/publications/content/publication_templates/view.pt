@@ -32,7 +32,7 @@
 
     <dl class="publicationDetails">
         
-        <dt id="" i18n:translate="">Author(s)</dt>        
+        <dt id="authors" i18n:translate="">Author(s)</dt>        
         <tal:block condition="context/creators" repeat="author context/creators">
             <dd tal:define="mtool python:context.portal_membership;
                             authorinfo python: mtool.getMemberInfo(author);" 
@@ -40,12 +40,12 @@
         </tal:block>
         
         <tal:block condition="context/dcterm_issue">
-        <dt id="" i18n:translate="">Issue</dt>
+        <dt id="issue" i18n:translate="">Issue</dt>
         <dd tal:content="context/dcterm_issue" />
         </tal:block>
         
         <tal:block condition="context/pages">
-        <dt id="" i18n:translate="">Number of pages</dt>
+        <dt id="pages" i18n:translate="">Number of pages</dt>
         <dd> <span tal:content="context/pages" /> pages</dd>
         </tal:block>
     </dl>
