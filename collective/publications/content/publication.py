@@ -10,6 +10,7 @@ from plone.namedfile.field import NamedBlobImage
 from Products.ATContentTypes.interfaces.file import IATFile
 
 from plone.app.dexterity.behaviors.metadata import IDublinCore
+from collective.dexteritytextindexer.utils import searchable
 
 from plone.formwidget.autocomplete import AutocompleteFieldWidget
 try:
@@ -53,7 +54,10 @@ class IPublication(form.Schema):
     )
 
 alsoProvides(IPublication, form.IFormFieldProvider)
-    
+
+searchable(IDublinCore, 'title')
+searchable(IDublinCore, 'description')
+
 class Publication(dexterity.Container):
     grok.implements(IPublication)
 
