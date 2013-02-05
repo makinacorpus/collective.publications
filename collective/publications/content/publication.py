@@ -3,7 +3,6 @@ from zope import schema
 from zope.interface import implements, alsoProvides
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
-from plone.indexer import indexer
 from plone.directives import dexterity, form
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
@@ -25,6 +24,12 @@ from collective.publications import MessageFactory as _
 
 class IPublication(form.Schema):
 
+    #~ authors = schema.Text(
+            #~ title=_(u"Authors"),
+            #~ description=_(u"Authors."),
+            #~ required=False,
+        #~ )
+        
     dcterm_abstract = RichText(
             title=_(u"Abstract"),
             description=_(u"A short summary of the content."),
@@ -55,22 +60,9 @@ class IPublication(form.Schema):
 
 alsoProvides(IPublication, form.IFormFieldProvider)
 
-searchable(IDublinCore, 'title')
-searchable(IDublinCore, 'description')
-
 class Publication(dexterity.Container):
     grok.implements(IPublication)
 
-
-@indexer(IPublication)
-def pagesIndexer(obj):
-    return obj.pages
-grok.global_adapter(pagesIndexer, name="pages_count")
-
-@indexer(IPublication)
-def issueIndexer(obj):
-    return obj.dcterm_issue
-grok.global_adapter(issueIndexer, name="dcterm_issue")
 
 class View(grok.View):
     grok.context(IPublication)

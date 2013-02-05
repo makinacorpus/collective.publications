@@ -6,6 +6,7 @@ from Products.CMFCore.utils import getToolByName
 INDEXES = {
     'FieldIndex' : [
         'dcterm_issue',
+        'creatorsIndexer',
     ],
     'KeywordIndex' : [
     ],

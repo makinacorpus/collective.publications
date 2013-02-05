@@ -4,7 +4,32 @@ __docformat__ = 'restructuredtext en'
 
 from five import grok
 from collective import dexteritytextindexer
+from collective.dexteritytextindexer.utils import searchable
+from plone.indexer import indexer
 from plone.dexterity.interfaces import IDexterityContent
+from plone.app.dexterity.behaviors.metadata import IDublinCore
+from collective.publications.content.publication import IPublication
+
+from collective.publications.utils import magicstring
+
+@indexer(IPublication)
+def pagesIndexer(obj):
+    return obj.pages
+grok.global_adapter(pagesIndexer, name="pages_count")
+
+@indexer(IPublication)
+def issueIndexer(obj):
+    return obj.dcterm_issue
+grok.global_adapter(issueIndexer, name="dcterm_issue")
+
+@indexer(IPublication)
+def creatorsIndexer(obj):
+    creators = [magicstring(a) for a in IDublinCore(obj).creators]
+    return creators
+grok.global_adapter(creatorsIndexer, name="creatorsIndexer")
+
+searchable(IDublinCore, 'title')
+searchable(IDublinCore, 'description')
 
 class MySearchableTextExtender(grok.Adapter):
     grok.context(IDexterityContent)
