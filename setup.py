@@ -31,7 +31,6 @@ setup(name='collective.publications',
             'plone.namedfile [blobs]',
             'collective.dexteritytextindexer',
             'collective.z3cform.widgets',
-            'collective.z3cform.keywordwidget',
             'collective.z3cform.datetimewidget',
             'plone.app.referenceablebehavior',
             # -*- Extra requirements: -*-
