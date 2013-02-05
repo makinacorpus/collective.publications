@@ -38,4 +38,14 @@ def upgrade_to_1001(context):
     site.portal_catalog.reindexIndex('dcterm_issue', site.REQUEST)
     
     
+def upgrade_to_1002(context):
+    """Upgrade to 1002"""
+    setup = getToolByName(context, 'portal_setup')
+    setup.runImportStepFromProfile('profile-collective.publications:default', 'typeinfo', run_dependencies=False)
+    transaction.commit()
+
+    site = getToolByName(context, 'portal_url').getPortalObject()
+    setuphandlers.setup_catalog(site)
+    site.portal_catalog.reindexIndex('creatorsIndexer', site.REQUEST)
+    
 
