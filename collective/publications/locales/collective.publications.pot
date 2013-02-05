@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-01-08 10:25+0000\n"
+"POT-Creation-Date: 2013-02-05 08:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,42 +14,42 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./content/publication.py:28
+#: ./content/publication.py:30
 msgid "A short summary of the content."
 msgstr ""
 
-#: ./content/publication.py:27
-#: ./content/publication_templates/view.pt:53
+#: ./content/publication.py:29
+#: ./content/publication_templates/view.pt:54
 msgid "Abstract"
 msgstr ""
 
-#: ./content/publication_templates/view.pt:34
+#: ./content/publication_templates/view.pt:35
 msgid "Author(s)"
 msgstr ""
 
-#: ./content/publication_templates/view.pt:58
+#: ./content/publication_templates/view.pt:59
 msgid "Available formats"
 msgstr ""
 
-#: ./content/publication.py:56
+#: ./content/publication.py:46
 msgid "Bibliographic citation"
 msgstr ""
 
-#: ./content/publication.py:63
+#: ./content/publication.py:53
 msgid "Cover"
 msgstr ""
 
-#: ./content/publication.py:61
+#: ./content/publication.py:51
 msgid "Cover picture."
 msgstr ""
 
-#: ./content/publication.py:45
-#: ./content/publication_templates/view.pt:42
+#: ./content/publication.py:35
+#: ./content/publication_templates/view.pt:43
 msgid "Issue"
 msgstr ""
 
-#: ./content/publication.py:51
-#: ./content/publication_templates/view.pt:47
+#: ./content/publication.py:41
+#: ./content/publication_templates/view.pt:48
 msgid "Number of pages"
 msgstr ""
 
@@ -57,21 +57,11 @@ msgstr ""
 msgid "Publication"
 msgstr ""
 
-#: ./content/publication.py:46
+#: ./content/publication.py:36
 msgid "Publication issue."
 msgstr ""
 
 #: ./profiles/default/types/publication.xml
 msgid "Publication type content."
-msgstr ""
-
-#. Default: "Persons responsible for creating the content of this item. Please enter a list of user names, one per line. The principal creator should come first."
-#: ./content/publication.py:34
-msgid "help_creators"
-msgstr ""
-
-#. Default: "Creators"
-#: ./content/publication.py:33
-msgid "label_creators"
 msgstr ""
 
