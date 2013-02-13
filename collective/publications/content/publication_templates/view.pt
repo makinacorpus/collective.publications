@@ -20,7 +20,7 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
-    <div class="align-right" 
+    <p class="align-right" 
             tal:define="cover nocall:context/cover"
             tal:condition="nocall:cover">
         <img tal:define="scales context/@@images;
@@ -28,7 +28,7 @@
              tal:replace="structure python: scales.scale('cover',
                           scale='mini').tag()"
             />
-        </div>
+        </p>
 
     <dl class="publicationDetails">
         
@@ -57,6 +57,7 @@
     
     <section id="available_format">
         <h2 i18n:translate="">Available formats</h2>
+        <p i18n:translate="">Download the file in the chosen format:</p>
         <ul tal:repeat="item context/view/getFiles">
             <li tal:define="item_icon python:plone_view.getIcon(item);
                             item_url item/getURL|item/absolute_url;">
