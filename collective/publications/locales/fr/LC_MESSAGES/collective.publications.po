@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-13 10:09+0000\n"
+"POT-Creation-Date: 2013-02-13 13:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,6 +42,10 @@ msgstr "Couverture"
 #: ./content/publication.py:51
 msgid "Cover picture."
 msgstr "Image de la 1ère de couverture."
+
+#: ./content/publication_templates/view.pt:67
+msgid "Download the ${format-name} format"
+msgstr "Télécharger au format ${format-name}"
 
 #: ./content/publication_templates/view.pt:60
 msgid "Download the file in the chosen format:"

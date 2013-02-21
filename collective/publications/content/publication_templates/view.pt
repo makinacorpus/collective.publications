@@ -60,9 +60,11 @@
         <p i18n:translate="">Download the file in the chosen format:</p>
         <ul tal:repeat="item context/view/getFiles">
             <li tal:define="item_icon python:plone_view.getIcon(item);
-                            item_url item/getURL|item/absolute_url;">
+                            item_url item/getURL|item/absolute_url;
+                            item_object item/getObject;
+                            content_type item_object/get_content_type|item_object/Format">
                 <img tal:replace="structure item_icon/html_tag" />
-                <a tal:content="item/Title" tal:attributes="href item_url"></a>
+                <a tal:attributes="href item_url" i18n:translate="">Download the <span i18n:name="format-name" tal:content="content_type">format</span> format</a>
             </li>
         </ul>
     </section>
