@@ -12,6 +12,7 @@
 
   <include package=".content" />
   <include package=".upgrades" />
+  <include package=".browser" />
         
   <i18n:registerTranslations directory="locales" />
 

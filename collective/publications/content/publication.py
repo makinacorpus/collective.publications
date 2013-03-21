@@ -52,6 +52,12 @@ class IPublication(form.Schema):
             required=False,
             title=_(u"Cover"),
     )
+    allowDiscussion  = schema.Bool(
+            title=_(u"Allow Users to Comment"),
+            description=_(u"Allow users to commemt on you.  Comments are shown at the end of each page"),
+            required=True,
+            default=True,
+    ) 
 
 alsoProvides(IPublication, form.IFormFieldProvider)
 
