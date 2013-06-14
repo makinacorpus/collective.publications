@@ -49,7 +49,7 @@ msgstr "Télécharger au format ${format-name}"
 
 #: ./content/publication_templates/view.pt:60
 msgid "Download the file in the chosen format:"
-msgstr "Télécharger le fichier dans le format souhaité :"
+msgstr "Télécharger le fichier dans le format souhaité&nbsp;:"
 
 #: ./content/publication.py:35
 #: ./content/publication_templates/view.pt:43
