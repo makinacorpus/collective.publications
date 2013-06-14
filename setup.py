@@ -27,6 +27,7 @@ setup(name='collective.publications',
       zip_safe=False,
       install_requires=[
             'setuptools',
+            'five.grok',
             'plone.app.dexterity',
             'plone.namedfile [blobs]',
             'collective.dexteritytextindexer',

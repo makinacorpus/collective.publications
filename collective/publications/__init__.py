@@ -1,15 +1,24 @@
 from zope.i18nmessageid import MessageFactory
-
 # Set up the i18n message factory for our package
 MessageFactory = MessageFactory('collective.publications')
 
-# Override subjects fields in dexterity contents
-# (see http://pypi.python.org/pypi/collective.z3cform.widgets#override-existing-fields)
+from z3c.form.interfaces import IFieldWidget
+from z3c.form.util import getSpecification
+from z3c.form.interfaces import IFormLayer
 from plone.app.dexterity.behaviors.metadata import ICategorization
-from zope import schema as _schema
 
+from five import grok
 
-from plone.directives import form
+from collective.z3cform.widgets.token_input_widget import TokenInputFieldWidget
 
-form.widget(ICategorization['subjects'], 'collective.z3cform.widgets.token_input_widget.TokenInputFieldWidget')
-_schema.getFields(ICategorization)['subjects'].index_name = 'Subject' 
+def SubjectsFieldWidget(field, request):
+    field.index_name = 'Subject'
+    return TokenInputFieldWidget(field, request)
+
+grok.global_adapter(
+    SubjectsFieldWidget,
+    (getSpecification(ICategorization['subjects']),
+     IFormLayer),
+    IFieldWidget,
+)
+
